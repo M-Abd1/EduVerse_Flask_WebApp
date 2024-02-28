@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teacher</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <style>
+        .contact .icons-container {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.contact .icons-container .icons {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  margin-bottom: 2rem;
+}
+
+.contact .icons-container .icons i {
+  height: 6.5rem;
+  width: 6.5rem;
+  line-height: 6.5rem;
+  font-size: 2.5rem;
+  color: #224bcf;
+  background: #e9edfb;
+  border-radius: 50%;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.contact .icons-container .icons h3 {
+  font-size: 2rem;
+  color: #302851;
+  padding: .7rem 0;
+}
+
+.contact .icons-container .icons p {
+  line-height: 2;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+
+.contact .row form {
+
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  margin: 80px auto;
+}
+
+.contact .row form h3 {
+  font-size: 2.5rem;
+  color: #302851;
+  margin-bottom: .5rem;
+}
+
+.contact .row form .box{
+  width: 60%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #666;
+  text-transform: none;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.contact .row form textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #666;
+  text-transform: none;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.contact .row form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/" class="logo"> <i class="fas fa-graduation-cap"></i>EduVerse</a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="#">courses +</a>
+                <ul>
+                    <li><a href="/course-1">Computer Science</a></li>
+                    <li><a href="/course-2">Personal Development</a></li>
+                    <li><a href="/course-3">Project Management</a></li>
+                </ul>
+            </li>
+            <li><a href="/teachers">Teachers</a>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+             </li>
+            <li><a href="/dashboard">Dashboard</a>
+            </li>
+        </ul>
+
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<section class="heading">
+    <h3>Add Teacher</h3>
+    <p> <a href="/">home >></a> Add Teacher</p>
+</section>
+
+<section class="contact">
+
+
+    <div class="row">
+
+        <form id ="form" action="/api/adminapiteacher" method="post">
+            <h3>get in touch</h3>
+            <input type="text" placeholder="Name" class="box" name="name">
+            <input type="email" placeholder="Email" class="box" name="email">
+            <input type="text" placeholder="Qualification" class="box" name="qualification">
+{#            <textarea  placeholder="course description" id="description" cols="30" rows="10" name="description"></textarea>#}
+            <input type="text" placeholder="Expertise" class="box" name="expertise">
+
+            <input type="submit" id="addcourse" value="Add Teacher" class="btn">
+        </form>
+
+{#        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1635757298406!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>#}
+
+    </div>
+
+</section>
+{#<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>#}
+{#<script src="../static/js/script.js"></script>#}
+{##}
+{#<script>#}
+{#    $(document).ready(function(){#}
+{#        // click on button submit#}
+{#        $("#addcourse").on('click', function(){#}
+{#            // send ajax#}
+{#            var formdata = $("#form").serializeArray();#}
+{#            var data = {};#}
+{#            $(formdata ).each(function(index, obj){#}
+{#                data[obj.name] = obj.value;#}
+{#            });#}
+{#            data=JSON.stringify(data)#}
+{#            console.log(data)#}
+{#            $.ajax({#}
+{#                url: '/api/adminapi', // url where to submit the request#}
+{#                type : "POST", // type of action POST || GET#}
+{#                data : data, // post data || get data#}
+{#                dataType : 'json',#}
+{#                contentType: "application/json; charset=utf-8",#}
+{##}
+{#                success : function(result) {#}
+{#                    // you can see the result from the console#}
+{#                    // tab of the developer tools#}
+{#                    console.log(result);#}
+{#                },#}
+{#                error: function(xhr, resp, text) {#}
+{#                    console.log(xhr, resp, text);#}
+{#                }#}
+{#            })#}
+{##}
+{#        });#}
+{#    });#}
+{#    </script>#}
+
+
+
+</body>
+</html>

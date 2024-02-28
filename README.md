@@ -1,0 +1,1 @@
+This is EduVerse's README FILE"# EduVerse_Flask_WebApp" "This WebApp is made on Flask in python" "User Authentication: Users can register, login, and logout securely." "It is responsive" Studets can add any course they like and send ffedback through the message page There's also an admin panel to add courses"# EduVerse_Flask_WebApp" 

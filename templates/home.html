@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  	<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/" class="logo"> <i class="fas fa-graduation-cap"></i> EduVerse </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="#">courses +</a>
+                <ul>
+                    <li><a href="/course-1">Computer Science</a></li>
+                    <li><a href="/course-2">Personal Development</a></li>
+                    <li><a href="/course-3">Project Management </a></li>
+                </ul>
+            </li>
+            <li><a href="/teachers">Teachers</a>
+
+            </li>
+            <li><a href="/contactform">contact</a></li>
+              <li><a href="#">Register</a>
+                <ul>
+                    <li><a href="/signupform">Sign Up</a></li>
+                     <li><a href="/loginform">Log In</a></li>
+                </ul>
+        </ul>
+
+
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home">
+
+    <div class="image">
+        <img src="../static/images/home-img.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Learning that leads you towards success</h3>
+        <p>Unlock Excellence at EduVerse - Where Knowledge Ignites Your Potential! Discover a world of endless possibilities with our dynamic learning environment, expert educators, and innovative resources. Join us on this transformative journey to unleash your true brilliance. Explore our tailored educational programs for scholars of all ages and backgrounds. Your gateway to a brighter future awaits at EduVerse!</p>
+        <a href="/course-1" class="btn">Get Started</a>
+
+    </div>
+        <div class="name" style="margin: auto">
+            <h2> {{ name }}</h2>
+        </div>
+
+</section>
+<table id="show" border="2" class="display">
+
+</table>
+    <script>
+        var myData
+                 $.ajax({type:"GET",
+                     url:"/showdata",
+                     success: function(response){
+                         myData = response
+                         {#console.log(myData)#}
+                         if(myData !=null || myData !=""){
+                            table = $('#show').DataTable( {
+                                data: myData ,destroy: true,
+                                columns: [
+                                    { data: 'category' , title:'Category'},
+                                    { data: 'course' , title:'Course'},
+                                    { data: 'transactionNo', title:'Transaction'},
+                                    { data: 'cnicNo', title:'CNIC' }
+                                ]
+                            } );
+                        }
+
+                  }});
+
+        $(document).ready(function(){
+            $('#show').DataTable();
+        });
+    </script>
+
+<!-- home section ends -->
+
+<!-- categories section starts  -->
+
+<section class="category">
+{#    <h2 style="text-align: center; margin: 15px auto;">Categories</h2>#}
+    <a href="/course-1" class="box">
+        <img src="../static/images/category-1.png" alt="">
+        <h3>Computer Science</h3>
+    </a>
+
+    <a href="/course-2" class="box">
+        <img src="../static/images/category-2.png" alt="">
+        <h3>Personal Development</h3>
+    </a>
+
+    <a href="/course-3" class="box">
+        <img src="../static/images/category-3.png" alt="">
+        <h3>Project Management</h3>
+    </a>
+
+{#    <a href="#" class="box">#}
+{#        <img src="../static/images/category-4.png" alt="">#}
+{#        <h3>social science</h3>#}
+{#    </a>#}
+{##}
+{#    <a href="#" class="box">#}
+{#        <img src="../static/images/category-5.png" alt="">#}
+{#        <h3>data analysis</h3>#}
+{#    </a>#}
+
+</section>
+
+<!-- categories section ends -->
+
+
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>explore</h3>
+                    <a href="/"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="/about"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="/teachers"> <i class="fas fa-arrow-right"></i> teachers </a>
+
+            <a href="/contactform"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>categories</h3>
+            <a href="/course-1"> <i class="fas fa-arrow-right"></i> web design </a>
+            <a href="/course-2"> <i class="fas fa-arrow-right"></i> Language   </a>
+            <a href="/course-3"> <i class="fas fa-arrow-right"></i> Scrum Methodologies</a>
+
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
+            <a href="/contactform"> <i class="fas fa-arrow-right"></i> feedback </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>Elixir Solutions</span> | all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+</body>
+</html>

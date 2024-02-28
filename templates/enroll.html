@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enroll Now</title>
+
+    <style>
+        /* Increase the size of the form container */
+        .form-container {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f7f7f7;
+        }
+
+        /* Style form labels and inputs */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Default styles for the input field */
+
+
+        /* Styles for the input field when it's in focus */
+        input:focus {
+            border-color: #070606; /* Change the border color to blue on focus */
+        }
+
+
+        /* Style the submit button */
+        form input[type="submit"] {
+            background-color: #224BCF;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Center the submit button */
+        form input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/" class="logo"> <i class="fas fa-graduation-cap"></i> EduVerse </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="#">courses +</a>
+                <ul>
+                    <li><a href="/course-1">Computer Sciences</a></li>
+                    <li><a href="/course-2">Personal Development</a></li>
+                    <li><a href="/course-3">Project Management</a></li>
+                </ul>
+            </li>
+            <li><a href="/teachers">Teachers</a>
+
+            </li>
+            <li><a href="/contactform">contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+</head>
+
+
+    <div class="form-container">
+    <h2>Enroll Now</h2>
+    <form action="/enroll" method="post">
+
+        <label for="bank">Bank:</label>
+        <select id="bank" name="bank" required>
+            <option value="">Select Bank</option>
+            <option value="jazzcash">JazzCash</option>
+            <option value="easypaisa">EasyPaisa</option>
+            <option value="hbl">HBL</option>
+            <option value="nationalbank">National Bank</option>
+            <option value="meezanbank">Meezan Bank</option>
+            <option value="sadapay">SadaPay</option>
+            <option value="nayapay">NayaPay</option>
+        </select>
+
+        <label for="transactionNo">Transaction Number:</label>
+        <input type="text" id="transactionNo" name="transactionNo" required>
+
+        <label for="contactNo">Contact No:</label>
+        <input type="tel" id="contactNo" name="contactNo" required>
+
+        <label for="cnicNo">CNIC No:</label>
+        <input type="text" id="cnicNo" name="cnicNo" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" onchange="updateCourses()" required>
+            <option value="">Select Category</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Personal Development">Design</option>
+            <option value="Project Management">Business</option>
+        </select>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select Category first</option>
+        </select>
+        {{ message }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>explore</h3>
+        <a href="/"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="/about"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="/teachers"> <i class="fas fa-arrow-right"></i> teachers </a>
+
+            <a href="/contactform"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>categories</h3>
+            <a href="/course-1"> <i class="fas fa-arrow-right"></i> web design </a>
+            <a href="/course-2"> <i class="fas fa-arrow-right"></i> Language   </a>
+            <a href="/course-3"> <i class="fas fa-arrow-right"></i> Scrum Methodologies</a>
+
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
+            <a href="/contactform"> <i class="fas fa-arrow-right"></i> feedback </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        </div>
+
+    </div>
+    <div class="credit"> created by <span>Elixir Solutions</span> | all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../static/js/script.js"></script>
+
+<script>
+        // Function to handle dynamic course dropdown
+        function updateCourses() {
+
+        var category = $("#category").val();
+        var courseDropdown = $("#course");
+        courseDropdown.html("");
+
+        if (category === "Computer Science") {
+            var csCourses = ["Web Design", "Digital Marketing", "Python Developer", "Data Analysis", "Email Marketing",
+                            "Graphic Design", ""];
+            for (var i = 0; i < csCourses.length; i++) {
+                var option = $("<option></option>").text(csCourses[i]);
+                courseDropdown.append(option);
+            }
+        } else if (category === "Personal Development") {
+            var businessCourses = ["Learning Makes You Perfect", "Lead And Guide Yourself", "Motivation Is All You Need",
+                                    "Leading Towards Goals", "Importance Of Communication Skills"];
+            for (var j = 0; j < businessCourses.length; j++) {
+                var option = $("<option></option>").text(businessCourses[j]);
+                courseDropdown.append(option);
+            }
+        } else if (category === "Project Management") {
+            var designCourses = ["Scrum Methodologies", "Software Architecture", "Intrduction To CMP" , "Introduction To Design" , "Software Budgeting Basics" , "SMP"];
+            for (var k = 0; k < designCourses.length; k++) {
+                var option = $("<option></option>").text(designCourses[k]);
+                courseDropdown.append(option);
+            }
+        }}
+
+    </script>
+</body>
+</html>

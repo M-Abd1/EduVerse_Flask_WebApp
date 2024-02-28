@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <style>
+        .contact .icons-container {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.contact .icons-container .icons {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  margin-bottom: 2rem;
+}
+
+.contact .icons-container .icons i {
+  height: 6.5rem;
+  width: 6.5rem;
+  line-height: 6.5rem;
+  font-size: 2.5rem;
+  color: #224bcf;
+  background: #e9edfb;
+  border-radius: 50%;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.contact .icons-container .icons h3 {
+  font-size: 2rem;
+  color: #302851;
+  padding: .7rem 0;
+}
+
+.contact .icons-container .icons p {
+  line-height: 2;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+
+
+.contact .row form {
+
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  margin: 80px auto;
+}
+
+.contact .row form h3 {
+  font-size: 2.5rem;
+  color: #302851;
+  margin-bottom: .5rem;
+}
+
+.contact .row form .box{
+  width: 60%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #666;
+  text-transform: none;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.contact .row form textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #666;
+  text-transform: none;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.contact .row form textarea {
+  height: 15rem;
+  resize: none;
+}
+.container{
+    display: flex;
+  justify-content: center; /* Horizontally center the child divs */
+}
+.button1 {
+  display: block;
+  width: 30%;
+  border: none;
+  background-color: rgba(4, 170, 140, 0.82);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button2{
+  display: block;
+  width: 30%;
+  border: none;
+  background-color: rgba(4, 170, 140, 0.82);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+.button3{
+    display: block;
+  width: 30%;
+  border: none;
+  background-color: rgba(4, 170, 140, 0.82);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.button1:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.button2:hover {
+  background-color: #ddd;
+  color: black;
+}
+.button3:hover {
+  background-color: #ddd;
+  color: black;
+}
+    </style>
+
+       <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  	<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/" class="logo"> <i class="fas fa-graduation-cap"></i>EduVerse</a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="#">courses +</a>
+                <ul>
+                    <li><a href="/course-1">Computer Science</a></li>
+                    <li><a href="/course-2">Personal Development</a></li>
+                    <li><a href="/course-3">Project Management</a></li>
+                </ul>
+            </li>
+            <li><a href="/teachers">Teachers</a>
+            </li>
+            <li><a href="/contact">contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<section class="heading">
+    <h3>Admin Dashboard</h3>
+    <p> <a href="/">home >></a>Admin Dashboard</p>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <div class = "button1" >
+        <button><a href="/addcoursesform">Add Course</a></button>
+        </div>
+        <div class = "button2">
+         <button><a href="/course-1" class="link-text">View Course</a></button>
+        </div>
+{#         <div class="button3">#}
+{#                <button><a href="/addteacherform" class="link-text">Add Teacher</a></button>#}
+{#         </div>#}
+    </div>
+
+</section>
+<br><br>
+
+<table id="show" border="2" class="display">
+
+</table>
+<script>
+        var myData
+                 $.ajax({type:"GET",
+                     url:"/showcourses",
+                     success: function(response){
+                         myData = response
+                         {#console.log(myData)#}
+                         if(myData !=null || myData !=""){
+                            table = $('#show').DataTable( {
+                                data: myData ,destroy: true,
+                                columns: [
+                                    { data: 'name' , title:'Name'},
+                                    { data:  'category' , title:'Category'},
+                                    { data: 'duration', title:'Duration'},
+                                    { data: 'description', title:'Description' }
+                                ]
+                            } );
+                        }
+
+                  }});
+
+        $(document).ready(function(){
+            $('#show').DataTable();
+        });
+    </script>
+</body>
